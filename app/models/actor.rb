@@ -8,10 +8,13 @@
 #  updated_at :datetime         not null
 #
 class Actor < ApplicationRecord
+  validates :name, presence: true
+  
   has_many :castings,
     class_name: :Casting,
     foreign_key: :actor_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   has_many :movies,
     through: :castings,

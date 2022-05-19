@@ -5,12 +5,11 @@ movies, and castings tables from the SQL Zoo project. RSpec tests will check
 that you both return the correct results and query the database the specified
 number of times. Please run them to check your work.
 
-It may be helpful to refer to the [SQL Zoo solutions][sql-zoo-solutions] for
-guidance as you work through these problems. Also make sure to reference the
-past Active Record readings as well as the [Active Record
-docs][active-record-docs].
+It may be helpful to refer to the SQL Zoo exercises for guidance as you work
+through these problems. Also make sure to reference the past Active Record
+readings as well as the [Active Record docs][active-record-docs].
 
-## Learning Goals
+## Learning goals
 
 By the end of this project you should be able to
 
@@ -21,6 +20,7 @@ By the end of this project you should be able to
 ## Setup
 
 First, make sure Postgres is running:
+
 * **Mac**: You should see an elephant icon in your menu bar; if you don't, start
   Postgres.app (it's in Applications). Click the icon. If you see a green
   checkmark in the dropdown menu, you're good; if not, click the `Start` button.
@@ -30,6 +30,8 @@ First, make sure Postgres is running:
 Then clone the skeleton repo from the `Download Project` link at the bottom of
 this page. Run `bundle install` and `./setup` to populate the database. (If you
 get a permission error, run `chmod +x setup` and then `./setup` again.)
+
+Run `bundle exec rspec` to test.
 
 If you'd like to run specs for a particular problem, simply append the
 corresponding line number to the spec file you want to run, like so:
@@ -74,7 +76,7 @@ found below:
 #  updated_at :datetime         not null
 ```
 
-## Notes on Building Active Record Queries
+## Notes on building Active Record queries
 
 You can manually test queries in the `rails console`. Remember that appending
 `to_sql`--which returns the SQL query Active Record makes under the hood--or
@@ -88,5 +90,4 @@ castings, and movies. Please take a look at these associations before you begin.
 
 Have fun and good luck!
 
-[sql-zoo-solutions]: https://assets.aaonline.io/fullstack/sql/projects/sqlzoo/solution.zip
 [active-record-docs]: http://guides.rubyonrails.org/active_record_querying.html

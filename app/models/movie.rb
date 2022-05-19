@@ -12,6 +12,8 @@
 #  updated_at  :datetime         not null
 #
 class Movie < ApplicationRecord
+  validates :title, :yr, :score, :votes, presence: true
+  
   belongs_to :director,
     class_name: :Actor,
     foreign_key: :director_id,
@@ -20,7 +22,8 @@ class Movie < ApplicationRecord
   has_many :castings,
     class_name: :Casting,
     foreign_key: :movie_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   has_many :actors,
     through: :castings,

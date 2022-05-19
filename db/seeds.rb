@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 ApplicationRecord.transaction do
+  puts "Preparing #{Rails.env} environment"
+
   # These `destroy_all` commands are not necessary if you use `rails
   # db:seed:replant`. If they are present when you run `db:seed:replant`,
   # however, the command will essentially just destroy the tables twice,
@@ -24,12 +26,12 @@ ApplicationRecord.transaction do
   end
 
   # Load data
-	puts "Preparing #{Rails.env} environment"
 	puts 'Loading actors...'
 	require_relative 'data/actors.rb'
 	puts 'Loading movies...'
 	require_relative 'data/movies.rb'
 	puts 'Loading castings...'
 	require_relative 'data/castings.rb'
+  
 	puts "Done with #{Rails.env} environment!"
 end

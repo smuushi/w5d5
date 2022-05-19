@@ -150,9 +150,9 @@ describe 'longest_career' do
 	subject { longest_career.as_json }
 	it 'retrieves the correct information' do
 		expected_result = [
-			{id: 3537, name: 'Deems Taylor', career: 59},
-			{id: 1915, name: 'Leopold Stokowski', career: 59},
-			{id: 845, name: 'Robert Stack', career: 56}
+			{id: 3537, name: 'Deems Taylor', career_length: 59},
+			{id: 1915, name: 'Leopold Stokowski', career_length: 59},
+			{id: 845, name: 'Robert Stack', career_length: 56}
 		].map{ |el| el.stringify_keys }
 
 		expect(subject).to eq(expected_result)
