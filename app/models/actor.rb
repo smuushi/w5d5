@@ -23,5 +23,6 @@ class Actor < ApplicationRecord
   has_many :directed_movies,
     class_name: :Movie,
     foreign_key: :director_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :nullify
   end
