@@ -31,7 +31,7 @@ def harrison_ford
   #   .select("movies.id, movies.title")
 
   Movie
-  .joins(:castings, :actors)
+  .joins(:actors)
   .where("actors.name = 'Harrison Ford' and castings.ord > 1").distinct
   # .where(:castings {actor_id: = actors.id})
   .select(:id, :title).distinct
